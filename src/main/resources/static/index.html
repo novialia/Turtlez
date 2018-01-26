@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+      <title>DorMate | Temukan Teman Asramamu</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+      <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css"></link>
+      <link rel="stylesheet" href="../dist/milligram.min.css"></link>
+      <link rel="stylesheet" href="css/main.css"></link>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="js/main.js"></script>
+  </head>
+  <body>
+    <div class="container" id="result">
+      <div class="row" id="start">
+        <div class="column colum-25 column-offset-10">
+            <h1>DorMate</h1>
+        </div>
+        <div class="column column-75 column-offset-5" id="login">
+          <blockquote>
+            <h5 class="exp">DorMate adalah aplikasi yang menggunakan teknik AI CSP dan Algoritma Genetik untuk mendapatkan teman asrama yang anda inginkan!</h5>
+          </blockquote>
+        </div>
+      </div>
+
+      <div class="row" id="result-search">
+        <div class="column column-50 column-offset-25" action="result">
+          <form id="form-submit">
+            <fieldset>
+              <label for="name">Select your name</label>
+              <select id="select-name" placeholder="Select your name">
+                <option value="0">Select Name</option>
+	        	<option th:each="name : ${names}" th:text="${name}" value="${name}" />
+              </select>
+              <button class="button-black" id="find-mate" value="Send" type="submit">Find Mates</button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>
